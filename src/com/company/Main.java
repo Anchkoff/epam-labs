@@ -23,7 +23,8 @@ public class Main {
             Scanner in = new Scanner(System.in);
             System.out.println("Input a to add a new passenger,\n" +
                     "input d to delete a passenger,\n" +
-                    "input s to show all passengers,\n" +
+                    "input r to show all passengers,\n" +
+                    "input s to search for passengers,\n" +
                     "input e to edit passenger,\n" +
                     "press enter to exit.");
             String command = in.nextLine();
@@ -38,8 +39,11 @@ public class Main {
                 OutputInfo("1");
                 EditPassenger();
             }
-            else if  (command.equals("s")) {
+            else if  (command.equals("r")) {
                 OutputInfo("1");
+            }
+            else if  (command.equals("s")) {
+                Search(1);
             }
             else
                 break;
@@ -64,9 +68,23 @@ public class Main {
         }
     }
 
+    public void Search(int option) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter your search query:");
+        String str =  in.nextLine();
+
+        if (option == 1) {
+            for (int i = 0; i < passengerList.size(); i++){
+                Passenger pass = passengerList.get(i);
+                if (pass.getFirstName().contains(str) || pass.getLastName().contains(str) || pass.getPassport().contains(str)) {
+                    System.out.printf("%d) %s %s, %s\n", (i + 1), pass.getFirstName(), pass.getLastName(), pass.getPassport());
+                }
+            }
+        }
+    }
+
     public void EditPassenger() {
         Scanner in = new Scanner(System.in);
-        OutputInfo("1");
         System.out.println("Input number of passenger to edit:");
         int num =  in.nextInt();
         in.nextLine();
