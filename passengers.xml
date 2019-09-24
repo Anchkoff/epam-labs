@@ -3,6 +3,11 @@
     <passenger>
         <firstName>Andrei</firstName>
         <lastName>Miachkou</lastName>
-        <passport>MP1488227</passport>
+        <passport>MP1488228</passport>
+    </passenger>
+    <passenger>
+        <firstName>Irina</firstName>
+        <lastName>Allegrova</lastName>
+        <passport>LP1111111</passport>
     </passenger>
 </passengers>
