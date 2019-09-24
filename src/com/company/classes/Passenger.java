@@ -1,21 +1,21 @@
 package com.company.classes;
 
-import java.util.Date;
+import java.util.Calendar;
 
-public class Passanger {
+public class Passenger {
     private String firstName;
     private String lastName;
-    private Date dateOfBirth;
+    private Calendar dateOfBirth;
     private String passport;
 
-    public Passanger(String firstName, String lastName, Date dateOfBirth, String passport) {
+    public Passenger(String firstName, String lastName, Calendar dateOfBirth, String passport) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.passport = passport;
     }
 
-    public Date getDateOfBirth() {
+    public Calendar getDateOfBirth() {
         return dateOfBirth;
     }
 

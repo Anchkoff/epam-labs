@@ -12,12 +12,13 @@ public class Flight {
     private Boolean checkIn;
     private AirCraft plane;
 
-    public Flight(String flightNumber, String departureCity, String arrivalCity, Date departureTime, Date arrivalTime, Boolean checkIn, AirCraft plane) {
+    public Flight(String flightNumber, String departureCity, String arrivalCity, Date departureTime, Date arrivalTime, String gate, Boolean checkIn, AirCraft plane) {
         this.flightNumber = flightNumber;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
+        this.gate = gate;
         this.checkIn = checkIn;
         this.plane = plane;
     }

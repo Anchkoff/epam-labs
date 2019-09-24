@@ -2,7 +2,7 @@ package com.company.classes;
 
 public class Ticket {
     private Flight flight;
-    private Passanger passanger;
+    private Passenger passenger;
     private int cost;
 
     public Ticket(Flight flight, int cost) {
@@ -14,12 +14,12 @@ public class Ticket {
         return flight;
     }
 
-    public Passanger getPassanger() {
-        return passanger;
+    public Passenger getPassenger() {
+        return passenger;
     }
 
-    public void setPassanger(Passanger passanger) {
-        this.passanger = passanger;
+    public void setPassenger(Passenger passenger) {
+        this.passenger = passenger;
     }
 
     public int getCost() {
