@@ -1,25 +1,20 @@
 package com.company.classes;
 
 import java.util.Calendar;
+import java.util.Comparator;
 
 public class Passenger {
     private String firstName;
     private String lastName;
-    //private Calendar dateOfBirth;
     private String passport;
 
     public Passenger(String firstName, String lastName, String passport) {
         this.firstName = firstName;
         this.lastName = lastName;
-        //this.dateOfBirth = dateOfBirth;
         this.passport = passport;
     }
 
     public Passenger() {}
-
-    /*public Calendar getDateOfBirth() {
-        return dateOfBirth;
-    }*/
 
     public String getFirstName() {
         return firstName;
@@ -44,4 +39,12 @@ public class Passenger {
     public void setPassport(String passport) {
         this.passport = passport;
     }
+
+    public static Comparator<Passenger> PassComparator = new Comparator<Passenger>() {
+
+        @Override
+        public int compare(Passenger e1, Passenger e2) {
+            return e1.getLastName().compareTo(e2.getLastName());
+        }
+    };
 }

@@ -25,6 +25,7 @@ public class Main {
                     "input d to delete a passenger,\n" +
                     "input r to show all passengers,\n" +
                     "input s to search for passengers,\n" +
+                    "input o to sort passengers,\n" +
                     "input e to edit passenger,\n" +
                     "press enter to exit.");
             String command = in.nextLine();
@@ -45,6 +46,9 @@ public class Main {
             else if  (command.equals("s")) {
                 Search(1);
             }
+            else if  (command.equals("o")) {
+                Sort(1);
+            }
             else
                 break;
         }
@@ -55,14 +59,8 @@ public class Main {
             System.out.println("List of all passengers:");
             for (int i = 0; i < passengerList.size(); i++){
                 Passenger pass = passengerList.get(i);
-                //Calendar cal = pass.getDateOfBirth();
                 System.out.printf("%d) %s %s, %s\n", (i+1), pass.getFirstName(),
                         pass.getLastName(), pass.getPassport());
-                /*
-                cal.get(Calendar.DAY_OF_MONTH),
-                        cal.get(Calendar.MONTH),
-                        cal.get(Calendar.YEAR)
-                */
             }
 
         }
@@ -83,25 +81,22 @@ public class Main {
         }
     }
 
+    public void Sort(int option) {
+        passengerList.sort(Passenger.PassComparator);
+        OutputInfo("1");
+    }
+
     public void EditPassenger() {
         Scanner in = new Scanner(System.in);
         System.out.println("Input number of passenger to edit:");
         int num =  in.nextInt();
         in.nextLine();
-        passengerList.remove(num - 1);
         System.out.println("Input new data:");
         System.out.println("Input name:");
         String name = in.nextLine();
         System.out.println("Input surname:");
         String surname = in.nextLine();
 
-        /*Calendar cal = Calendar.getInstance();
-        System.out.println("Input year of birth:");
-        cal.set(Calendar.YEAR, in.nextInt());
-        System.out.println("Input month of birth:");
-        cal.set(Calendar.MONTH, in.nextInt());
-        System.out.println("Input day of birth:");
-        cal.set(Calendar.DAY_OF_MONTH, in.nextInt());*/
         System.out.println("Passport no:");
         String passport = in.nextLine();
         passengerList.remove(num - 1);
@@ -126,14 +121,6 @@ public class Main {
         String name = in.nextLine();
         System.out.println("Input surname:");
         String surname = in.nextLine();
-
-        /*Calendar cal = Calendar.getInstance();
-        System.out.println("Input year of birth:");
-        cal.set(Calendar.YEAR, in.nextInt());
-        System.out.println("Input month of birth:");
-        cal.set(Calendar.MONTH, in.nextInt());
-        System.out.println("Input day of birth:");
-        cal.set(Calendar.DAY_OF_MONTH, in.nextInt());*/
         System.out.println("Passport no:");
         String passport = in.nextLine();
 
