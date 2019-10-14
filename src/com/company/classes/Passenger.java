@@ -2,6 +2,7 @@ package com.company.classes;
 
 import java.util.Calendar;
 import java.util.Comparator;
+import java.util.StringJoiner;
 
 public class Passenger {
     private String firstName;
@@ -47,4 +48,8 @@ public class Passenger {
             return e1.getLastName().compareTo(e2.getLastName());
         }
     };
+
+    public String toString() {
+        return this.getLastName() + " " + this.getFirstName() + ", " + this.getPassport();
+    }
 }

@@ -59,8 +59,7 @@ public class Main {
             System.out.println("List of all passengers:");
             for (int i = 0; i < passengerList.size(); i++){
                 Passenger pass = passengerList.get(i);
-                System.out.printf("%d) %s %s, %s\n", (i+1), pass.getFirstName(),
-                        pass.getLastName(), pass.getPassport());
+                System.out.printf("%d) %s\n", (i + 1), pass.toString());
             }
 
         }
@@ -75,7 +74,7 @@ public class Main {
             for (int i = 0; i < passengerList.size(); i++){
                 Passenger pass = passengerList.get(i);
                 if (pass.getFirstName().contains(str) || pass.getLastName().contains(str) || pass.getPassport().contains(str)) {
-                    System.out.printf("%d) %s %s, %s\n", (i + 1), pass.getFirstName(), pass.getLastName(), pass.getPassport());
+                    System.out.printf("%d) %s\n", (i + 1), pass.toString());
                 }
             }
         }
@@ -84,6 +83,7 @@ public class Main {
     public void Sort(int option) {
         passengerList.sort(Passenger.PassComparator);
         OutputInfo("1");
+        savePassDataToFile(new File("passengers.xml"));
     }
 
     public void EditPassenger() {

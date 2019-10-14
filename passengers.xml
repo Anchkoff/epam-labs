@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <passengers>
     <passenger>
-        <firstName>Andrei</firstName>
-        <lastName>Miachkou</lastName>
-        <passport>MP1488228</passport>
-    </passenger>
-    <passenger>
         <firstName>Irysha</firstName>
         <lastName>Allegrova</lastName>
         <passport>MP1234567</passport>
+    </passenger>
+    <passenger>
+        <firstName>Andrei</firstName>
+        <lastName>Miachkou</lastName>
+        <passport>MP1488228</passport>
     </passenger>
 </passengers>
